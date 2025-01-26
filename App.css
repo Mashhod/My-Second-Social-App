@@ -1,0 +1,47 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 35px;
+}
+
+.logo {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: cadetblue;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+  list-style: none;
+
+}
+
+.Loader-Grand-Parent {
+  /* margin: auto; */
+  /* margin-top: 10%; */
+  /* margin-left: 50%; */
+  /* height: 50%; */
+  /* width: 100%; */
+
+  position: fixed;
+    left: 0px;
+    top: 0px;
+    /* border: solid olivedrab; */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0000001c;
+}
+.Loader-Parent {
+  /* margin: auto;
+  margin-top: 10%;
+  margin-left: 50%;
+  height: 50%;
+  width: 50%; */
+}
