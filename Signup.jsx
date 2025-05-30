@@ -1,7 +1,21 @@
 import React, { useContext, useState } from 'react';
-import { getAuth , createUserWithEmailAndPassword, updateProfile} from "firebase/auth";
+import { getAuth , createUserWithEmailAndPassword, updateProfile, sendEmailVerification} from "firebase/auth";
 import { GlobalContext } from '../context/Context';
+// import { Link } from 'react-router';
 // import Loader from '../component/Loader';
+import myImage from './images/one-removebg-preview.png';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Redirect } from '../Route/HandleNavigate';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
+import Container from 'react-bootstrap/Container';
+import InputGroup from 'react-bootstrap/InputGroup';
+import { Link } from 'react-router';
+
+
+
+
 
 
 
@@ -21,7 +35,7 @@ const Signup = () => {
         dispatch({type: "USER_LOADER" });
 
         
-        // dispatch({isLogin:false, user: {}, isLoader: true})
+        dispatch({isLogin:false, user: {}, isLoader: true})
         // console.log('state before signup response ', state);
         
         createUserWithEmailAndPassword(auth, email, password)
@@ -35,6 +49,18 @@ const Signup = () => {
                     displayName: userName, photoURL: "https://heroshotphotography.com/wp-content/uploads/2023/03/male-linkedin-corporate-headshot-on-white-square-1024x1024.jpg",
                    
                 }).then(() => {
+                  sendEmailVerification(auth.currentUser)
+                          .then(() => {
+                            // Email verification sent!
+                            console.log("Email verification sent!")
+                            // ...
+                          })
+                          .catch(() => {
+                            console.log("Verification not sent")
+
+                          })
+
+
                     // Profile updated!
                     console.log("Profile Updated")
                 }).catch((error) => {
