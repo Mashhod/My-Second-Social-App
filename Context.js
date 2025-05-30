@@ -6,7 +6,7 @@ export const GlobalContext = createContext("Initial Value");
 let data = {
     user: {},
     isLogin: null,
-    isLoader: false    
+    // isLoader: false    
 
 }
 
