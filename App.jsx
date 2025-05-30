@@ -3,11 +3,13 @@ import './App.css';
 import { initializeApp } from "firebase/app";
 // import Signup from './pages/Signup';
 // import Login from './pages/Login';
-import { Link } from 'react-router';
+// import { Link } from 'react-router';
 import CustomRoutes from './component/CustomRoutes';
 import { useContext, useEffect } from 'react';
 import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
 import { GlobalContext } from './context/Context';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Redirect } from './Route/HandleNavigate';
 // import { Redirect } from './Route/HandleNavigate.jsx';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // Redirect
@@ -33,6 +35,7 @@ function App() {
   
   // Initialize Firebase
   const app = initializeApp(firebaseConfig)
+
 
   const auth = getAuth();
 
@@ -77,6 +80,7 @@ function App() {
     <div className="App">
       <header>
         <div className='logo'>
+          <img src="src/pages/logo/creative-gradient-code-logo_23-2148813996.jpg" alt="gradient" />
 
         </div>
 
@@ -91,13 +95,13 @@ function App() {
         <nav>
           <ul>
             <li>
-              {/* <Redirect path="/signup" text="SignUps"/> */}
-              <Link to={'/signup'}>Signup</Link>
+              <Redirect path="/signup" text="SignUps"/>
+              {/* <Link to={'/signup'}>Signup</Link> */}
             </li>
 
             <li>
-              <Link to={'/login'}>Logins</Link>
-              {/* {<Redirect path="/login" text="Login"/>} */}
+              {/* <Link to={'/login'}>Login</Link> */}
+              {<Redirect path="/login" text="Login"/>}
             </li>
           </ul>
         </nav>
