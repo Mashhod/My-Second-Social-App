@@ -1,17 +1,17 @@
-// import { CircularProgress } from '@mui/material'
+import { CircularProgress } from '@mui/material'
 
-// import React from 'react'
+import React from 'react'
 
-// const Loader = () => {
-//   return (
-//     <div className='Loader-Grand-Parent'>
-//       <div className='Loader-Parent'>
-//         <CircularProgress  />
+const Loader = () => {
+  return (
+    <div className='Loader-Grand-Parent'>
+      <div className='Loader-Parent'>
+        <CircularProgress  />
 
-//       </div>
-//     </div>
-//   )
-// }
+      </div>
+    </div>
+  )
+}
 
-// export default Loader
+export default Loader
 
